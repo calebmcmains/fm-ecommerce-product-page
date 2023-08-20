@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop.png)
+![](./screenshots/desktop.jpg)
 
 You can see other screenshots in the screenshot folder.
 
