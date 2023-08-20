@@ -123,6 +123,8 @@
   min-width: $fs-base * 16;
   border-radius: $br-l;
   overflow: hidden;
+  // workaround for safari not liking overflow hidden with border radius
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   .previous,
   .next {
@@ -130,7 +132,7 @@
   }
 
   .main-img {
-    transition: all 200ms ease-in;
+    transition: transform 200ms ease-in;
     &:hover {
       cursor: pointer;
       transform: scale(1.025);
@@ -553,7 +555,7 @@ body.modal-open {
 }
 
 .modal-thumbnail-img {
-  width: 100%;
+  // width: 100%;
   max-height: $fs-base * 5.5;
   object-fit: cover;
 }
