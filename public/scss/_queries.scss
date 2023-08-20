@@ -1,0 +1,307 @@
+@media only screen and (max-width: 1232px) {
+  .cart-info-container {
+    transform: translate(-74%, 10%);
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  /* ********************************** */
+  /* HEADER */
+  /* ********************************** */
+  .header {
+    padding-top: $white-space-base * 2.5;
+    padding-bottom: $white-space-base * 2.5;
+  }
+  .logo-container {
+    margin-right: $white-space-base * 3;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* ********************************** */
+  /* RESUABLE COMPONENTS */
+  /* ********************************** */
+  .heading-primary {
+    font-size: $fs-m;
+    line-height: $lh-s;
+    letter-spacing: $ls-s;
+    margin-bottom: $white-space-base * 2;
+  }
+
+  .heading-secondary {
+    font-size: $fs-xs;
+    margin-bottom: $white-space-base * 1.5;
+  }
+
+  .paragraph {
+    font-size: $fs-s;
+    line-height: $lh-l;
+    letter-spacing: $ls-m;
+    margin-bottom: $white-space-base * 3;
+  }
+
+  /* ********************************** */
+  /* BODY */
+  /* ********************************** */
+  .stop-scrolling {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ********************************** */
+  /* HEADER */
+  /* ********************************** */
+  .header {
+    border-bottom: none;
+  }
+
+  /* ********************************** */
+  /* NAV DESKTOP*/
+  /* ********************************** */
+  .main-nav-list {
+    gap: $white-space-base * 2;
+  }
+
+  .cart-profile {
+    gap: $white-space-base * 3;
+
+    .profile {
+      width: $white-space-base * 4;
+      height: $white-space-base * 4;
+    }
+  }
+
+  /* ********************************** */
+  /* NAV MOBILE */
+  /* ********************************** */
+  .btn-mobile-nav {
+    display: block;
+    margin-right: $white-space-base * 2;
+    height: 16px;
+    width: 16px;
+    z-index: 9999;
+
+    .mobile-nav-icon path {
+      fill: $neutral-700;
+    }
+    &:hover {
+      .mobile-nav-icon path {
+        fill: transparentize($neutral-800, 0.2);
+      }
+    }
+  }
+
+  .main-nav {
+    background-color: $neutral-500;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 75%;
+    z-index: 9000;
+    transition: all 300ms ease;
+
+    /* 1) Hide it visually */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* Hide it from screen readers */
+    visibility: hidden;
+
+    .main-nav-list {
+      flex-direction: column;
+      gap: $white-space-base * 3;
+      align-items: start;
+      padding: 0 $white-space-base * 3;
+      padding-top: $white-space-base * 12;
+
+      .main-nav-link {
+        &:link,
+        &:visited {
+          color: $neutral-900;
+          font-weight: $fw-bold;
+        }
+
+        &:hover,
+        &:active {
+          color: $neutral-800;
+        }
+
+        &:hover::after,
+        &:active::after {
+          content: "";
+          position: static;
+          top: 0;
+          left: 0;
+          transform: none;
+          height: 0;
+          width: 0;
+          background: none;
+          color: none;
+        }
+      }
+    }
+  }
+
+  .nav-open {
+    .background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      background: transparentize($neutral-900, 0.25);
+      display: flex;
+      opacity: 1;
+      transition: all 300ms ease;
+    }
+    .main-nav {
+      top: 0;
+      left: -$white-space-base * 3;
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .mobile-nav-icon.close {
+      display: block;
+    }
+    .mobile-nav-icon.menu {
+      display: none;
+    }
+  }
+
+  /* ********************************** */
+  /* PRODUCT */
+  /* ********************************** */
+  .section-product {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ********************************** */
+  /* PRODUCT IMAGES */
+  /* ********************************** */
+
+  .main-img-container {
+    border-radius: $br-base;
+    height: 500px;
+    position: relative;
+    transition: height 200ms ease-in;
+
+    .previous {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      width: $white-space-base * 5;
+      height: $white-space-base * 5;
+      background-color: $neutral-100;
+      border-radius: $br-circle;
+      top: 50%;
+      left: 0;
+      transform: translate(50%, -50%);
+      transition: all 200ms ease-in;
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      path {
+        stroke: $neutral-900;
+      }
+      &:hover {
+        path {
+          stroke: $primary-400;
+        }
+      }
+    }
+
+    .main-img {
+      &:hover {
+        cursor: default;
+        transform: none;
+      }
+    }
+
+    .next {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      width: $white-space-base * 5;
+      height: $white-space-base * 5;
+      background-color: $neutral-100;
+      border-radius: $br-circle;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 56%;
+        transform: translate(-50%, -50%);
+      }
+      path {
+        stroke: $neutral-900;
+      }
+      &:hover {
+        path {
+          stroke: $primary-400;
+        }
+      }
+    }
+  }
+
+  .main-img:hover {
+    cursor: default;
+    transform: none;
+  }
+
+  .thumbnail-imgs {
+    display: none;
+  }
+
+  /* ********************************** */
+  /* PRODUCT DETAILS */
+  /* ********************************** */
+  .product-details {
+    margin: $white-space-base * 3;
+  }
+
+  .pricing-container {
+    gap: $white-space-base * 2;
+  }
+
+  .price {
+    letter-spacing: $ls-s;
+  }
+
+  .old-price {
+    margin: 0 0 0 auto;
+  }
+
+  .mobile-pricing-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: $white-space-base * 3;
+  }
+
+  /* ********************************** */
+  /* CART */
+  /* ********************************** */
+  .cart-info-container {
+    transform: translate(-74%, 13%);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  /* ********************************** */
+  /* PRODUCT IMAGES */
+  /* ********************************** */
+  .main-img-container {
+    border-radius: $br-base;
+    height: 300px;
+  }
+}

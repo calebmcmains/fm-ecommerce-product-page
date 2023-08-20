@@ -1,0 +1,85 @@
+/* ********************************** */
+/* BASE STYLES */
+/* ********************************** */
+body {
+  font-size: $fs-base;
+  font-family: $font-base;
+  font-weight: $fw-regular;
+  background-color: $neutral-100;
+}
+
+/* ********************************** */
+/* RESUABLE COMPONENTS */
+/* ********************************** */
+.container {
+  max-width: 73rem;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: $fw-bold;
+}
+
+.heading-primary {
+  font-size: $fs-l;
+  line-height: $lh-s;
+  letter-spacing: $ls-xs;
+  margin-bottom: $white-space-base * 4;
+}
+
+.heading-secondary {
+  font-size: $fs-s;
+  letter-spacing: $ls-l;
+  margin-bottom: $white-space-base * 2;
+  color: $primary-400;
+}
+
+.heading-tertiary {
+  font-size: $fs-base;
+}
+
+.paragraph {
+  color: $neutral-700;
+  font-size: $fs-base;
+  line-height: $lh-m;
+  margin-bottom: $white-space-base * 2;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 500px;
+
+  /* only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background: var(--CLR-PRIMARY-GREEN);
+  background: linear-gradient(
+    90deg,
+    var(--CLR-PRIMARY-GREEN) 0%,
+    var(--CLR-NEUTRAL-CYAN) 100%
+  );
+  color: var(--CLR-NEUTRAL-WHITE);
+}
+
+.btn-full:hover,
+.btn-full:active {
+  opacity: 75%;
+}
